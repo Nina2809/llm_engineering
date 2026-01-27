@@ -1,3 +1,65 @@
+# 👩‍💻 Nina Velkavrh – LLM Engineering Course (Hands-on Work)
+
+This repository contains **my hands-on work and experiments** completed as part of the  
+**LLM Engineering (8-week) course by Ed Donner**.
+
+The goal of this project is to **build practical intuition and engineering skills** for
+working with large language models, prompt design, and applied AI systems.
+
+I use this fork as a **learning log and portfolio**, committing meaningful progress each week.
+
+---
+
+## 📌 My Progress Overview
+
+
+### ⏳ Upcoming weeks
+- Week 2: Prompt chaining & evaluation
+- Week 3: Embeddings & semantic search
+- Week 4: RAG systems
+- Week 5–7: Agents, tools, orchestration
+- Week 8: End-to-end autonomous system
+
+## ✅ Week 1: Prompt Engineering & Structured LLM Calls
+
+### 1. What I learned in Week 1:
+
+During Week 1, I focused on understanding the **foundations of LLM usage in practice**, not just calling models but reasoning about how and why they behave the way they do.
+Key concepts I learned:
+- How **LLMs are accessed via APIs** using structured messages (`system`, `user`) and why prompt structure matters
+- The difference between **cloud-based frontier models** and **local open-source models** (via Ollama)
+- How **client–server architecture** works for LLMs (local HTTP server, JSON requests, responses)
+- What a **context window** is and how it includes prompts, conversation history, and outputs
+- How **API costs** are driven by both input and output tokens (including “memory” from prior messages)
+- When local models are a good choice (learning, experimentation, RAG prototypes) and when they are not (latency guarantees, large-scale production)
+
+### 2. How I applied these approaches:
+
+#### Day 1 — ATS-aware CV prompt
+Built a **CV content assistant** using structured `system` and `user` prompts, with explicit guardrails to prevent hallucinated experience and enforce evidence-based outputs. Focused on ATS-aware keyword extraction and structured CV sections (summary, skills, tools).
+
+**Skills:** prompt engineering, output structuring, API-based LLM usage  
+📄 **File:** `week1/day1.ipynb`
+
+#### Day 2 — Webpage summarization using a local open-source model via Ollama
+Implemented a **scraping → summarization pipeline** that extracts and summarizes news content from webpages, with rules to prioritize breaking items and ignore navigation noise. Switched from a paid API to a **local open-source model** using Ollama.
+
+**Skills:** local LLM inference, model deployment via Ollama, prompt-based content extraction    
+📄 **File:** `week1/day2.ipynb`
+
+#### Day 5 — Multi-site recipe retrieval & meal-prep planning
+Implemented a **multi-step LLM workflow** that filters recipe links from multiple websites and generates a constrained **weekly meal-prep plan**. Applied structured JSON outputs, dietary constraints (ingredients, allergies), preparation time limits, and daily calorie bounds.
+
+**Skills:** multi-step LLM workflows, structured outputs (JSON), constraint-based generation  
+📄 **File:** `week1/day5.ipynb`
+
+### 3. What I noticed I could improve:
+- Better **modularization** of notebook code into reusable functions or scripts
+- Adding **basic validation and error handling** for LLM outputs and scraped data
+- Improving **input preprocessing** (cleaning, chunking) before passing large texts to models
+- Adding **post-generation validation** to check constraints (e.g. calories, time, allergies) and regenerate outputs when constraints are violated
+
+---
 # LLM Engineering - Master AI and LLMs
 
 ## Your 8 week journey to proficiency starts today
