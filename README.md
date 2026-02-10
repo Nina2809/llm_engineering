@@ -14,11 +14,58 @@ I use this fork as a **learning log and portfolio**, committing meaningful progr
 
 
 ### ⏳ Upcoming weeks
-- Week 2: Prompt chaining & evaluation
 - Week 3: Embeddings & semantic search
 - Week 4: RAG systems
 - Week 5–7: Agents, tools, orchestration
 - Week 8: End-to-end autonomous system
+
+## ✅ Week 2: Multi-Model Workflows, Tools & AI Assistants
+
+### 1. What I learned in Week 2:
+
+During Week 2, I focused on understanding how **production-style AI assistants are built**, moving beyond single prompts to multi-model workflows, tools, and interactive applications.
+
+Key concepts I learned:
+- How **frontier models are used via APIs** (OpenAI, Anthropic, Gemini) and differences between providers  
+- How to structure **conversation history and system prompts** to maintain context and control assistant behavior  
+- How to design **multi-model conversations** and orchestrate multiple LLMs in one workflow  
+- How abstraction layers and routers help manage models and costs  
+- How **streaming responses** and generators (`yield`) improve UX and responsiveness  
+- How to build simple **web UIs for LLM apps using Gradio**  
+- How **tool/function calling** works using JSON schemas and how LLMs interact with external functions  
+- Foundations of **agentic workflows**: LLMs planning steps, calling tools, and operating in loops  
+- How token usage, caching, and model choice impact **cost and performance**  
+- Why separating logic (tools, validation, control flow) from prompting is key for production systems  
+
+### 2. How I applied these approaches:
+
+#### Day 1 — Multi-model conversation orchestration  
+Built a structured **multi-LLM conversation system** where different models simulate distinct personalities and respond in sequence while sharing conversation history. Implemented message-based context handling and role mapping to maintain coherent dialogue across models.
+
+**Skills:** conversation state management, multi-model orchestration, structured message building  
+📄 **File:** `week2/day1.py`
+
+#### Day 3 — Interactive meal-prep assistant with Gradio (iteration of Week 1 project)
+
+Extended and refined the **meal-prep planning system built in Week 1** (multi-site recipe retrieval & constrained weekly planning) into a more structured and interactive assistant. Focused on improving **control, usability, and conversational flow** by introducing a strict system prompt, two-mode logic (information gathering → final output), and a simple web UI using Gradio.
+
+This iteration shifts the project from a one-time generation pipeline to a **controlled conversational assistant** that gathers requirements first and then generates a complete, structured weekly plan in one response.
+
+**Skills:** conversational assistant design, system prompt control for deterministic outputs, workflow iteration, Gradio UI integration, API-based deployment  
+📄 **File:** `week2/day3.py`  
+(extends: `week1/day5.ipynb`)
+
+#### Ongoing — Final project (tool-based agent)  
+Began designing a **tool-enabled AI assistant** (stock portfolio assistant) that will use function/tool calling to retrieve and process external data. This project focuses on moving from prompt-only systems to structured agent workflows where the LLM can call tools and operate toward a defined goal.
+
+**Skills (in progress):** tool calling (function calling), agent design patterns, multi-step workflows with external data  
+
+### 3. What I noticed I could improve:
+
+- Handle more **edge cases** in the conversational flow (missing inputs, inconsistent calorie targets, unrealistic prep-time constraints, multi-user conflicts)  
+- Add stronger protection against **prompt injection and malicious inputs**, ensuring the assistant does not ignore system rules or generate unsafe plans  
+- Improve **input validation** and guardrails before generating the final meal plan to ensure outputs always meet constraints  
+- Persist conversation history in a **database or structured storage** instead of only in-session memory, enabling continuity, debugging, and real-world usability
 
 ## ✅ Week 1: Prompt Engineering & Structured LLM Calls
 
