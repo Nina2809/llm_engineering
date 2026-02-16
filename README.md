@@ -14,10 +14,51 @@ I use this fork as a **learning log and portfolio**, committing meaningful progr
 
 
 ### ⏳ Upcoming weeks
-- Week 3: Embeddings & semantic search
 - Week 4: RAG systems
 - Week 5–7: Agents, tools, orchestration
 - Week 8: End-to-end autonomous system
+
+## ✅ Week 3: Open-Source GenAI & Hugging Face Ecosystem
+
+### 1. What I learned in Week 3:
+
+During Week 3, I focused on understanding how open-source LLMs and multimodal models are actually loaded, run, and optimized in practice using the Hugging Face ecosystem.
+
+Key concepts I learned:
+
+- How the Hugging Face platform is structured (models, datasets, spaces) and how to choose models based on task, size, and hardware constraints  
+- The difference between packaged local model tools (like Ollama) and working directly with open-source models via Hugging Face libraries  
+- How to use core Hugging Face libraries: `transformers`, `datasets`, `diffusers`, `accelerate`, and `peft`  
+- How model pipelines provide high-level APIs for common tasks (sentiment analysis, NER, summarization, Q&A, translation, speech, image generation)  
+- The difference between training and inference, and when we work with already-trained models in production scenarios  
+- How tokenization works and how text is converted into token IDs before being processed by a model  
+- How chat models expect structured message inputs and how these are converted into token sequences  
+- Basic architecture of transformer models (embeddings, attention layers, decoder layers, LM head) and how outputs are generated token-by-token  
+- How quantization reduces memory usage (8-bit, 4-bit, NF4) and enables running large models on limited hardware  
+- How to run models efficiently on GPU/CPU using device mapping and PyTorch  
+- How streaming outputs and token generation works  
+- How to use Google Colab for cloud-based experimentation with GPUs and Hugging Face integration  
+
+### 2. Practical concepts explored from code examples:
+
+Although this week focused more on understanding than building a full standalone project, I worked through several practical implementation patterns:
+
+- Loading open-source LLMs (e.g., LLaMA) using `AutoModelForCausalLM` and tokenizers  
+- Applying quantization with `BitsAndBytesConfig` to reduce memory footprint  
+- Using Hugging Face pipelines for text, audio, and image tasks  
+- Running speech-to-text transcription using Whisper models  
+- Building a meeting-minutes workflow:
+  - transcribing audio to text (speech-to-text)
+  - processing transcript with an LLM
+  - generating structured summaries and action points  
+- Streaming model outputs and decoding generated tokens  
+- Understanding model internals such as embeddings, attention layers, and output probability generation  
+
+This provided a clearer understanding of how production-ready open-source AI systems are structured and optimized.
+
+### 3. Summary:
+
+Week 3 focused on building a deeper technical understanding of open-source LLMs and the Hugging Face ecosystem — from tokenization and model architecture to quantization and real-world pipelines for audio, text, and image generation.
 
 ## ✅ Week 2: Multi-Model Workflows, Tools & AI Assistants
 
