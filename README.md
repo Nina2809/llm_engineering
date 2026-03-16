@@ -18,6 +18,30 @@ I use this fork as a **learning log and portfolio**, committing meaningful progr
 - Week 5–7: Agents, tools, orchestration
 - Week 8: End-to-end autonomous system
 
+## ✅ Week 4: Choosing the Right LLM & Evaluating GenAI Solutions
+ 
+### 1. What I learned in Week 4:
+ 
+During Week 4, I focused on understanding **how to choose the right LLM for a given task** and **how to evaluate whether a GenAI solution is actually working**.
+ 
+Key concepts I learned:
+- How to approach **model selection** systematically — starting from basics (parameters, context window, pricing, license, latency, rate limits) and then consulting benchmarks and leaderboards
+- How to read and use **benchmarks** as early guidance: GPQA, MMLU-Pro, AIME, LiveCodeBench, and HLE (Humanity's Last Exam)
+- **Limitations of benchmarks**: training data contamination, saturation, overfitting, narrow scope, and the concern that frontier models may be aware they are being evaluated
+- Key **leaderboards** for model selection: Artificial Analysis, Vellum, Scale/SEAL, Hugging Face, and LiveBench (contamination-free)
+- The **Chinchilla Scaling Law** and why it's less relevant today due to better training methods and inference-time techniques like RAG
+- The difference between **model-centric metrics** (accuracy, F1, loss — measured during training) and **business-centric metrics** (ROI, customer satisfaction, KPIs — the actual commercial goals)
+- A **5-step strategy** for building AI products: understand requirements → select candidate models → demo → customize (RAG, fine-tuning) → productionize
+ 
+### 2. How I applied these approaches:
+ 
+#### Day 3–4 — Python-to-C++ code generator
+ 
+Built a tool that uses frontier models to convert Python code into high-performance C++, then compiles and runs the output to measure actual execution time. Tested across OpenAI, Anthropic, Gemini, Grok, and open-source models via Ollama, using a unified OpenAI-compatible client pattern wrapped in a Gradio UI for easy model switching — making model performance directly comparable on an identical task.
+ 
+**Skills:** multi-model benchmarking, prompt design for code generation, subprocess integration, Gradio UI, Ollama for local inference  
+📄 **Files:** `week4/day3.ipynb`, `week4/day4.ipynb`
+ 
 ## ✅ Week 3: Open-Source GenAI & Hugging Face Ecosystem
 
 ### 1. What I learned in Week 3:
